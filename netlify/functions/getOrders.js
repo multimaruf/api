@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     const { created_from, limit, offset } = event.queryStringParameters;
 
     // Construct URL with optional query params
-    const url = new URL('https://mothersmm.com/adminapi/v2/orders');
+    const url = new URL('https://greatfollows.com/adminapi/v2/orders');
     if (created_from) url.searchParams.append('created_from', created_from);
     if (limit) url.searchParams.append('limit', limit);
     if (offset) url.searchParams.append('offset', offset);
