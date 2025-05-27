@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
     });
 
     if (!response.ok) {
-      throw new Error(API error: ${response.status});
+      throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
