@@ -1,4 +1,4 @@
-// getOrders.js
+// getOrders.js — ফিক্সড ভার্সন
 const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
@@ -31,7 +31,7 @@ exports.handler = async (event) => {
     const data = await res.json();
     let list = data.data?.list || [];
 
-    // Step 2: service_id দেওয়া থাকলে, ফিল্টার করুন (ফ্রন্টএন্ডের মতোই)
+    // Step 2: service_id দেওয়া থাকলে, ফিল্টার করুন
     if (service_id) {
       const targetId = String(service_id).trim();
       list = list.filter(order => {
@@ -39,10 +39,10 @@ exports.handler = async (event) => {
       });
     }
 
-    // Step 3: ফিল্টার করা ডেটা রিটার্ন করুন
+    // Step 3: ফিল্টার করা ডেটা রিটার্ন করুন (সঠিক সিনট্যাক্স)
     const response = {
       ...data,
-       {
+      data: {
         ...data.data,
         list,
         count: list.length // অপশনাল: আপডেটেড কাউন্ট
