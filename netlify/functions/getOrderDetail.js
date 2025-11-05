@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const res = await fetch(`https://bulkprovider.com/adminapi/v2/orders/${id}`, {
+    const res = await fetch(`https://greatfollows.com/adminapi/v2/orders/${id}`, {
       headers: { 'X-Api-Key': process.env.API_KEY }
     });
 
