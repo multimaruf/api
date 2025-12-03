@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 
   try {
     // Step 1: greatfollows.com থেকে সব completed অর্ডার নিন
-    const url = new URL('https://greatfollows.com/adminapi/v2/orders');
+    const url = new URL('https://globalfollows.com/adminapi/v2/orders');
     url.searchParams.append('order_status', 'completed');
     url.searchParams.append('created_from', created_from);
     url.searchParams.append('limit', limit);
